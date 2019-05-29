@@ -1,15 +1,12 @@
-from selenium import webdriver
 import openpyxl
-from selenium.webdriver.common.keys import Keys
 import time
 from bs4 import BeautifulSoup
-import chardet
 
 import requests
 wb = openpyxl.load_workbook('1000companydataset.xlsx',data_only=True)
 ws = wb.active
 # HTTP GET Request
-for i in range(100,101):
+for i in range(100):
     req = requests.get('http://m.mk.co.kr/yearbook/index.php?page='+str(i)+'&TM=Y2&MM=T0')
 
     #참조 : http://pythonstudy.xyz/python/article/403-%ED%8C%8C%EC%9D%B4%EC%8D%AC-Web-Scraping
@@ -38,4 +35,5 @@ for i in range(100,101):
         ws.cell(row=i*10+j+2, column=1).value=company[j]
         ws.cell(row=i*10+j+2, column=2).value=int(ranks[j])
     wb.save('1000companydataset.xlsx')
+    time.sleep(3)
     print('page '+str(i)+' done.')
