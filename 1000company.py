@@ -1,7 +1,6 @@
 import openpyxl
 import time
 from bs4 import BeautifulSoup
-
 import requests
 wb = openpyxl.load_workbook('1000companydataset.xlsx',data_only=True)
 ws = wb.active
