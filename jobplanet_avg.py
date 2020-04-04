@@ -5,8 +5,9 @@ from bs4 import BeautifulSoup
 wb = openpyxl.load_workbook('1000companydataset.xlsx',data_only=True)
 ws = wb.active
 url='https://www.jobplanet.co.kr/search?utf8=&query='
-for idx,i in enumerate(ws[]):
-    print(idx,i[0].value,end=' ')
+for idx,i in enumerate(ws['A1156':'A1426']):
+    print(idx+1 ,i[0].value,end=' ')
+
 
     req = requests.get(url+i[0].value)
 
