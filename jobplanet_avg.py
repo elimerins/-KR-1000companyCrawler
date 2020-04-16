@@ -2,10 +2,10 @@ import openpyxl
 import requests
 import time
 from bs4 import BeautifulSoup
-wb = openpyxl.load_workbook('1000companydataset.xlsx',data_only=True)
+wb = openpyxl.load_workbook('seoul_strong_small_companies.xlsx',data_only=True)
 ws = wb.active
 url='https://www.jobplanet.co.kr/search?utf8=&query='
-for idx,i in enumerate(ws['A1156':'A1426']):
+for idx,i in enumerate(ws['A2':'A501']):
     print(idx+1 ,i[0].value,end=' ')
 
 
@@ -18,16 +18,16 @@ for idx,i in enumerate(ws['A1156':'A1426']):
     try:
         result_card = soup.find('span',{'class':'rate_ty02'})
         print(result_card.text)
-        ws.cell(row=i[0].row, column = 13).value = result_card.text
+        #ws.cell(row=i[0].row, column = 5).value = result_card.text
         if idx%10 == 0:
-            wb.save('./1000companydataset.xlsx')
+            wb.save('./seoul_strong_small_companies.xlsx')
             print('saved.')
 
     except Exception as e:
         print('avg not found')
     time.sleep(2)
 
-wb.save('1000companydataset.xlsx')
+wb.save('seoul_strong_small_companies.xlsx')
 
 
 
