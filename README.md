@@ -2,21 +2,21 @@
 # Korea Sales Top 1000 2018
 
 
-# 개요
+# 1. 개요
   ## 18' 매출 1000대기업, 서울형 강소기업 데이터 및 잡플래닛 평점 크롤링 & 엑셀 삽입
   
-# 내용
+# 2. 내용
 
-  ### 1000company.py
+  - 1000company.py
   18' 매경연감 기준 매출액 1000대 기업 순위 및 사명 크롤링
-  ### Companydata.py
+  - Companydata.py
   1000대 기업 평균연봉, 직급별 연봉 크롤링 및 연봉 상승률 계산
-  ### Seoul_strong_small_business.py
+ - Seoul_strong_small_business.py
   서울형 강소기업 리스트 사명, 주소, 업종 크롤링
-  ### JobPlanet_avg.py
+  - JobPlanet_avg.py
   잡플래닛에서 회사 평점 크롤링
   
-# 시사점
+# 3. 시사점
   ## 매일 일정시간, 탐색 후 값 업데이트 필요 시 갱신
   ## 수집데이터 기반 개인용 웹사이트 구축, 취업준비에 활용
   
